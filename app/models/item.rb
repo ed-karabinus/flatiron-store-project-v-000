@@ -4,6 +4,6 @@ class Item < ActiveRecord::Base
   has_many :line_items
 
   def self.available_items
-    where('quantity > 0')
+    where('inventory > 0')
   end
 end
