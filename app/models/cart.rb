@@ -1,7 +1,9 @@
 class Cart < ActiveRecord::Base
-  belongs_to :user
+  has_one :order
 
   has_many :line_items
+
+  belongs_to :user
 
   def total
     return line_items.inject(0) do |sum, line_item|
