@@ -7,6 +7,8 @@ class CartsController < ApplicationController
       item.inventory -= line_item.quantity
       item.save
     end
+    @cart.status = "submitted"
+    @cart.save
     @user.current_cart = nil
     redirect_to cart_path(@cart)
   end
